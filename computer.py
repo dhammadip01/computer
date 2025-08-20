@@ -5,7 +5,7 @@ from sklearn.naive_bayes import MultinomialNB
 import streamlit as st
 import winsound  # 🔔 For beep sound
 
-data = pd.read_csv("C:\\Users\\Dhammadip\\Downloads\\spam.csv")
+data = pd.read_csv("spam.csv")
 data.drop_duplicates(inplace=True)
 data['Category'] = data['Category'].replace(['ham', 'spam'], ['Not Spam', 'Spam'])
 
@@ -61,3 +61,4 @@ else:
                 winsound.Beep(1000, 5000)
             else:
                 st.markdown(f"### ✅ Result: **{output}**", unsafe_allow_html=True)
+
