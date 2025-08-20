@@ -6,7 +6,7 @@ import streamlit as st
 import base64
 
 # ---------- Spam Dataset ----------
-data = pd.read_csv("C:\\Users\\Dhammadip\\Downloads\\spam.csv")
+data = pd.read_csv("spam.csv")
 data.drop_duplicates(inplace=True)
 data['Category'] = data['Category'].replace(['ham', 'spam'], ['Not Spam', 'Spam'])
 
@@ -82,3 +82,4 @@ else:
                 play_beep()  # 🔔 Auto beep in browser for 5 sec
             else:
                 st.markdown(f"### ✅ Result: **{output}**", unsafe_allow_html=True)
+
